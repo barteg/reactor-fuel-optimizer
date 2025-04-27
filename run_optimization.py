@@ -1,4 +1,4 @@
-from optimization.ga_optimizer import run_genetic_algorithm
+from optimization.genetic import run_genetic_algorithm
 from visualization.plot_core import plot_core
 
 def main():
