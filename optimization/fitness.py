@@ -1,172 +1,158 @@
-# optimization/fitness.py
-
+"""
+Module: optimization/fitness.py
+Complex fitness function for reactor core FA layout optimization.
+"""
 import numpy as np
+from core_sim.core_grid import CoreGrid
+from core_sim.fuel_assembly import FuelAssembly
 
-# Domyślne wagi (mogą być zmieniane podczas działania)
-w1_uniformity = 1.0
-w2_hotspots = 1.0
-w3_symmetry = 1.0
-w4_energy = 1.0
-w5_lifetime = 1.0
+# ==== Configurable parameters ====
+T_BASE = 300.0       # °C, base temperature of new FA
+BETA_T = 20.0        # °C, temperature rise at full wear
+KAPPA_T = 0.1        # Neighbor influence coefficient
+MAX_TEMP = 620.0     # °C, max safe temperature
+GAMMA_T = 1.0        # Coefficient for overheating penalty
+LAMBDA_T = 0.05      # Exponential growth rate for temp penalty
+HOTSPOT_DIFF = 0.15  # life difference threshold for hotspot
+E_MAX = 1.0          # Maximum energy per FA (scale)
+EPSILON_E = 0.05     # Enrichment impact factor
 
-# Limity bezpieczeństwa
-MAX_TEMPERATURE = 620  # °C
-MAX_USAGE = 0.95       # Maksymalne zużycie FA
-MAX_BURNUP_DIFF = 0.2  # Maksymalna różnica wypalenia
+# Dynamic weight boosting factor
+C_BOOST = 0.1
 
-# Stała zamieniająca "pozostałe życie" na temperaturę (prosty model)
-LIFE_TO_TEMP_COEFF = 400  # przykładowo: 0.0 → 800°C, 1.0 → 400°C
+# Initial weights (modifiable)
+w_temp = 1.0
+w_hotspot = 1.0
+w_symmetry = 1.0
+w_lifetime = 1.0
+w_energy = 1.0
 
-def calculate_temperature(fa):
-    """Szacowanie lokalnej temperatury FA na podstawie życia."""
-    return 800 - fa.life * LIFE_TO_TEMP_COEFF
-
-def f_uniformity(grid):
-    """Ocena równomierności wypalenia pomiędzy sąsiadami."""
-    penalty = 0
+# ===== Helpers =====
+def get_neighbors(grid: CoreGrid, x: int, y: int):
+    """Return list of (neighbor_fa, weight) for Moore neighborhood."""
+    offsets = [(-1,0,1.0),(1,0,1.0),(0,-1,1.0),(0,1,1.0),
+               (-1,-1,0.5),(-1,1,0.5),(1,-1,0.5),(1,1,0.5)]
     size = grid.size
-    for x in range(size):
-        for y in range(size):
-            fa = grid.grid[x, y]
-            if fa.fa_type != "movable":
-                continue
+    result = []
+    for dx, dy, w in offsets:
+        nx, ny = x+dx, y+dy
+        if 0 <= nx < size and 0 <= ny < size:
+            result.append((grid.grid[nx, ny], w))
+    return result
 
-            neighbors = get_neighbors(grid, x, y)
-            for neighbor, weight in neighbors:
-                if neighbor.fa_type != "movable":
-                    continue
-                life_diff = abs(fa.life - neighbor.life)
-                penalty += weight * life_diff
-    return penalty / (size * size)
 
-def f_hotspots(grid):
-    """Penalizacja lokalnych hotspotów."""
-    hotspots = 0
-    size = grid.size
-    for x in range(size):
-        for y in range(size):
-            fa = grid.grid[x, y]
-            if fa.fa_type != "movable":
-                continue
+def calculate_temperature(fa: FuelAssembly, grid: CoreGrid) -> float:
+    """
+    Compute FA temperature with neighbor correction.
+    T_i = T_BASE + BETA_T*(1-life_i) + KAPPA_T * avg(T_j - T_i)
+    """
+    Ti = T_BASE + BETA_T * (1.0 - fa.life)
+    deltas = []
+    x,y = fa.position
+    for neighbor, _ in get_neighbors(grid, x, y):
+        if neighbor:
+            Tj = T_BASE + BETA_T * (1.0 - neighbor.life)
+            deltas.append(Tj - Ti)
+    if deltas:
+        Ti += KAPPA_T * np.mean(deltas)
+    return Ti
 
-            temp = calculate_temperature(fa)
-            if temp > MAX_TEMPERATURE:
-                hotspots += (temp - MAX_TEMPERATURE)
-    return hotspots
 
-def f_symmetry(grid):
-    """Ocena osiowej symetrii układu."""
-    deviation = 0
-    size = grid.size
-    for x in range(size):
-        for y in range(size):
-            fa = grid.grid[x, y]
-            mirror_fa = grid.grid[size - 1 - x, size - 1 - y]
-            if fa.fa_type == "movable" and mirror_fa.fa_type == "movable":
-                deviation += abs(fa.life - mirror_fa.life)
-    return deviation / (size * size)
+def f_hotspots(grid: CoreGrid) -> float:
+    """Sum of hotspots: max(0, |life_i-life_j|-HOTSPOT_DIFF)."""
+    total = 0.0
+    for fa in grid.get_all_fuel_assemblies():
+        if fa.fa_type != "movable":
+            continue
+        x,y = fa.position
+        for neighbor, _ in get_neighbors(grid, x, y):
+            if neighbor and neighbor.fa_type == "movable":
+                diff = abs(fa.life - neighbor.life) - HOTSPOT_DIFF
+                if diff > 0:
+                    total += diff
+    return total
 
-def f_lifetime(grid):
-    """Średnie przewidywane życie FA (im większe, tym lepiej)."""
-    total_life = 0
-    count = 0
-    size = grid.size
-    for x in range(size):
-        for y in range(size):
-            fa = grid.grid[x, y]
-            if fa.fa_type == "movable":
-                total_life += fa.life
-                count += 1
-    return total_life / count if count else 0
 
-def f_energy(grid):
-    """Suma dostępnej energii — model jako suma życia FA."""
-    total_energy = 0
-    size = grid.size
-    for x in range(size):
-        for y in range(size):
-            fa = grid.grid[x, y]
-            if fa.fa_type == "movable":
-                total_energy += fa.life
-    return total_energy
-
-def penalties(grid):
-    """Dodatkowe kary za złamanie limitów bezpieczeństwa."""
-    penalty = 0
-    size = grid.size
-
-    for x in range(size):
-        for y in range(size):
-            fa = grid.grid[x, y]
-            if fa.fa_type != "movable":
-                continue
-
-            temp = calculate_temperature(fa)
-            if temp > MAX_TEMPERATURE:
-                penalty += 1000  # Duża kara za przegrzanie
-
-            if (1.0 - fa.life) > MAX_USAGE:
-                penalty += 500   # Kara za nadmierne zużycie
-
-            # Sprawdź różnice wypalenia z sąsiadami
-            neighbors = get_neighbors(grid, x, y)
-            for neighbor, _ in neighbors:
-                if neighbor.fa_type != "movable":
-                    continue
-                burnup_diff = abs(fa.life - neighbor.life)
-                if burnup_diff > MAX_BURNUP_DIFF:
-                    penalty += 200  # Kara za niejednorodność
+def f_overheat_penalty(grid: CoreGrid) -> float:
+    """Exponential penalty for FA above MAX_TEMP."""
+    penalty = 0.0
+    for fa in grid.get_all_fuel_assemblies():
+        if fa.fa_type != "movable":
+            continue
+        Ti = calculate_temperature(fa, grid)
+        if Ti > MAX_TEMP:
+            penalty += GAMMA_T * np.exp(LAMBDA_T * (Ti - MAX_TEMP))
     return penalty
 
-def dynamic_weight_adjustment(grid):
-    """Dynamiczna adaptacja wag podczas oceny."""
-    global w2_hotspots, w1_uniformity, w5_lifetime
 
-    if f_hotspots(grid) > 0:
-        w2_hotspots = 2.0  # zwiększ wagę hotspotów
+def f_energy(grid: CoreGrid) -> float:
+    """Total energy generated by movable FA."""
+    total = 0.0
+    for fa in grid.get_all_fuel_assemblies():
+        if fa.fa_type == "movable":
+            total += E_MAX * fa.life * (1.0 + EPSILON_E * fa.enrichment)
+    return total
 
-    avg_life = f_lifetime(grid)
-    if avg_life < 0.3:
-        w5_lifetime = 2.0  # zwiększ wagę życia
 
-    uniformity_penalty = f_uniformity(grid)
-    if uniformity_penalty > 0.2:
-        w1_uniformity = 2.0  # zwiększ wagę równomierności
+def f_lifetime(grid: CoreGrid) -> float:
+    """Average remaining life of movable FA."""
+    lives = [fa.life for fa in grid.get_all_fuel_assemblies() if fa.fa_type == "movable"]
+    return np.mean(lives) if lives else 0.0
 
-def get_neighbors(grid, x, y):
-    """Zwraca sąsiadów FA i odpowiadające im wagi."""
+
+def f_symmetry(grid: CoreGrid) -> float:
+    """Symmetry score: 1 - (sum|life diff| + |E diff|)/(2*N)."""
     size = grid.size
-    neighbors = []
+    diffs = 0.0
+    count = 0
+    movable = [fa for fa in grid.get_all_fuel_assemblies() if fa.fa_type == "movable"]
+    N = len(movable)
+    for fa in movable:
+        x,y = fa.position
+        mirror = grid.grid[size-1-x, size-1-y]
+        if mirror.fa_type == "movable":
+            diffs += abs(fa.life - mirror.life)
+            Ei = E_MAX * fa.life * (1.0 + EPSILON_E * fa.enrichment)
+            Ej = E_MAX * mirror.life * (1.0 + EPSILON_E * mirror.enrichment)
+            diffs += abs(Ei - Ej)
+            count += 1
+    if N > 0:
+        score = 1.0 - diffs/(2.0 * N)
+        return max(0.0, score)
+    return 0.0
 
-    offsets = [
-        (-1, 0, 1.0), (1, 0, 1.0), (0, -1, 1.0), (0, 1, 1.0),  # Oś główna
-        (-1, -1, 0.5), (-1, 1, 0.5), (1, -1, 0.5), (1, 1, 0.5)  # Ukośne
-    ]
 
-    for dx, dy, weight in offsets:
-        nx, ny = x + dx, y + dy
-        if 0 <= nx < size and 0 <= ny < size:
-            neighbor = grid.grid[nx, ny]
-            neighbors.append((neighbor, weight))
-    return neighbors
+def adjust_weights(grid: CoreGrid):
+    """Boost weights if safety limits are exceeded."""
+    global w_temp, w_hotspot
+    over_temp = sum(1 for fa in grid.get_all_fuel_assemblies()
+                     if fa.fa_type=="movable" and calculate_temperature(fa,grid)>MAX_TEMP)
+    hotspots = f_hotspots(grid)
+    if over_temp > 5 or hotspots > 10:
+        w_temp *= (1.0 + C_BOOST)
+        w_hotspot *= (1.0 + C_BOOST)
 
-def fitness(grid):
-    """Główna funkcja fitness."""
-    # Dynamicznie dostosuj wagi
-    dynamic_weight_adjustment(grid)
 
-    f_uni = f_uniformity(grid)
-    f_hot = f_hotspots(grid)
-    f_sym = f_symmetry(grid)
-    f_life = f_lifetime(grid)
-    f_en = f_energy(grid)
-    penalty = penalties(grid)
+def fitness(grid: CoreGrid, report: bool=False) -> float:
+    """
+    Compute overall fitness. Lower is better.
+    Components include overheat penalty, hotspots, energy (subtracted),
+    symmetry penalty, lifetime reward, with dynamic weights.
+    """
+    adjust_weights(grid)
+    overheat = f_overheat_penalty(grid)
+    hot = f_hotspots(grid)
+    energy = f_energy(grid)
+    life = f_lifetime(grid)
+    sym = f_symmetry(grid)
 
-    return (
-        w1_uniformity * f_uni +
-        w2_hotspots * f_hot +
-        w3_symmetry * f_sym +
-        w5_lifetime * f_life -
-        w4_energy * f_en +
-        penalty
-    )
+    score = w_temp * overheat + w_hotspot * hot - w_energy * energy \
+            + w_symmetry * (1.0 - sym) - w_lifetime * life
+
+    if report:
+        print(f"Overheat: {overheat:.3f}, Hotspots: {hot:.3f}, "
+              f"Energy: {-energy:.3f}, Lifetime: {life:.3f}, Symmetry Penalty: {1-sym:.3f}")
+        print(f"Weights: temp={w_temp:.2f}, hotspot={w_hotspot:.2f}, "
+              f"sym={w_symmetry:.2f}, life={w_lifetime:.2f}, energy={w_energy:.2f}")
+        print(f"Total fitness: {score:.3f}")
+    return score
