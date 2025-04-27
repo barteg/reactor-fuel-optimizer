@@ -16,5 +16,5 @@ def main():
     # Rysowanie siatki
     plot_core(core)
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
