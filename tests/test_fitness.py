@@ -1,5 +1,4 @@
 import unittest
-import numpy as np
 from core_sim.core_grid import CoreGrid
 from optimization.fitness import fitness, calculate_temperatures
 from optimization.hotspots import hotspots
