@@ -1,9 +1,9 @@
 from optimization.genetic import run_genetic_algorithm
+
 from visualization.plot_core import plot_core
 
 
 def main():
-    # Uruchamiamy GA z małymi parametrami-smoketest
     best_layout = run_genetic_algorithm(
         population_size=10,
         generations=5,
@@ -13,9 +13,8 @@ def main():
         num_fuel_types=3,
         log_to_file=True
     )
-
-    # Wizualizacja najlepszego układu
     plot_core(best_layout, title="GA Best Core Layout")
+
 
 if __name__ == "__main__":
     main()
