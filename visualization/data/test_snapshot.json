@@ -1,0 +1,122 @@
+[
+  [
+    {"temperature": 540, "life": 0.95, "enrichment": 3.2},
+    {"temperature": 545, "life": 0.93, "enrichment": 3.3},
+    {"temperature": 548, "life": 0.92, "enrichment": 3.4},
+    {"temperature": 555, "life": 0.91, "enrichment": 3.2},
+    {"temperature": 560, "life": 0.90, "enrichment": 3.2},
+    {"temperature": 552, "life": 0.92, "enrichment": 3.3},
+    {"temperature": 546, "life": 0.94, "enrichment": 3.2},
+    {"temperature": 549, "life": 0.95, "enrichment": 3.2},
+    {"temperature": 555, "life": 0.93, "enrichment": 3.3},
+    {"temperature": 561, "life": 0.90, "enrichment": 3.4}
+  ],
+  [
+    {"temperature": 542, "life": 0.94, "enrichment": 3.2},
+    {"temperature": 548, "life": 0.92, "enrichment": 3.3},
+    {"temperature": 552, "life": 0.91, "enrichment": 3.2},
+    {"temperature": 560, "life": 0.90, "enrichment": 3.2},
+    {"temperature": 565, "life": 0.88, "enrichment": 3.4},
+    {"temperature": 558, "life": 0.90, "enrichment": 3.3},
+    {"temperature": 551, "life": 0.93, "enrichment": 3.2},
+    {"temperature": 553, "life": 0.94, "enrichment": 3.2},
+    {"temperature": 558, "life": 0.91, "enrichment": 3.3},
+    {"temperature": 562, "life": 0.89, "enrichment": 3.4}
+  ],
+  [
+    {"temperature": 541, "life": 0.95, "enrichment": 3.2},
+    {"temperature": 547, "life": 0.93, "enrichment": 3.2},
+    {"temperature": 553, "life": 0.92, "enrichment": 3.4},
+    {"temperature": 559, "life": 0.91, "enrichment": 3.2},
+    {"temperature": 564, "life": 0.89, "enrichment": 3.2},
+    {"temperature": 557, "life": 0.91, "enrichment": 3.3},
+    {"temperature": 550, "life": 0.94, "enrichment": 3.2},
+    {"temperature": 554, "life": 0.94, "enrichment": 3.2},
+    {"temperature": 557, "life": 0.92, "enrichment": 3.4},
+    {"temperature": 563, "life": 0.89, "enrichment": 3.4}
+  ],
+  [
+    {"temperature": 543, "life": 0.96, "enrichment": 3.2},
+    {"temperature": 549, "life": 0.92, "enrichment": 3.3},
+    {"temperature": 555, "life": 0.92, "enrichment": 3.3},
+    {"temperature": 561, "life": 0.91, "enrichment": 3.3},
+    {"temperature": 567, "life": 0.87, "enrichment": 3.4},
+    {"temperature": 559, "life": 0.89, "enrichment": 3.3},
+    {"temperature": 553, "life": 0.92, "enrichment": 3.2},
+    {"temperature": 555, "life": 0.94, "enrichment": 3.3},
+    {"temperature": 561, "life": 0.90, "enrichment": 3.3},
+    {"temperature": 565, "life": 0.88, "enrichment": 3.4}
+  ],
+  [
+    {"temperature": 545, "life": 0.97, "enrichment": 3.2},
+    {"temperature": 550, "life": 0.94, "enrichment": 3.4},
+    {"temperature": 558, "life": 0.91, "enrichment": 3.2},
+    {"temperature": 564, "life": 0.89, "enrichment": 3.2},
+    {"temperature": 569, "life": 0.85, "enrichment": 3.4},
+    {"temperature": 561, "life": 0.87, "enrichment": 3.3},
+    {"temperature": 555, "life": 0.92, "enrichment": 3.2},
+    {"temperature": 556, "life": 0.93, "enrichment": 3.2},
+    {"temperature": 563, "life": 0.88, "enrichment": 3.3},
+    {"temperature": 568, "life": 0.86, "enrichment": 3.4}
+  ],
+  [
+    {"temperature": 546, "life": 0.95, "enrichment": 3.2},
+    {"temperature": 551, "life": 0.92, "enrichment": 3.4},
+    {"temperature": 559, "life": 0.89, "enrichment": 3.2},
+    {"temperature": 566, "life": 0.87, "enrichment": 3.3},
+    {"temperature": 572, "life": 0.83, "enrichment": 3.4},
+    {"temperature": 563, "life": 0.85, "enrichment": 3.3},
+    {"temperature": 557, "life": 0.90, "enrichment": 3.2},
+    {"temperature": 558, "life": 0.91, "enrichment": 3.2},
+    {"temperature": 565, "life": 0.86, "enrichment": 3.3},
+    {"temperature": 570, "life": 0.84, "enrichment": 3.4}
+  ],
+  [
+    {"temperature": 548, "life": 0.94, "enrichment": 3.2},
+    {"temperature": 553, "life": 0.90, "enrichment": 3.3},
+    {"temperature": 561, "life": 0.87, "enrichment": 3.2},
+    {"temperature": 568, "life": 0.85, "enrichment": 3.3},
+    {"temperature": 573, "life": 0.81, "enrichment": 3.4},
+    {"temperature": 565, "life": 0.83, "enrichment": 3.3},
+    {"temperature": 559, "life": 0.88, "enrichment": 3.2},
+    {"temperature": 560, "life": 0.89, "enrichment": 3.2},
+    {"temperature": 567, "life": 0.84, "enrichment": 3.3},
+    {"temperature": 572, "life": 0.82, "enrichment": 3.4}
+  ],
+  [
+    {"temperature": 550, "life": 0.93, "enrichment": 3.2},
+    {"temperature": 555, "life": 0.88, "enrichment": 3.3},
+    {"temperature": 563, "life": 0.85, "enrichment": 3.2},
+    {"temperature": 570, "life": 0.83, "enrichment": 3.4},
+    {"temperature": 576, "life": 0.78, "enrichment": 3.4},
+    {"temperature": 567, "life": 0.81, "enrichment": 3.3},
+    {"temperature": 561, "life": 0.86, "enrichment": 3.2},
+    {"temperature": 562, "life": 0.87, "enrichment": 3.2},
+    {"temperature": 569, "life": 0.82, "enrichment": 3.3},
+    {"temperature": 574, "life": 0.80, "enrichment": 3.4}
+  ],
+  [
+    {"temperature": 551, "life": 0.92, "enrichment": 3.2},
+    {"temperature": 556, "life": 0.87, "enrichment": 3.3},
+    {"temperature": 564, "life": 0.84, "enrichment": 3.2},
+    {"temperature": 571, "life": 0.82, "enrichment": 3.4},
+    {"temperature": 577, "life": 0.77, "enrichment": 3.4},
+    {"temperature": 569, "life": 0.80, "enrichment": 3.3},
+    {"temperature": 563, "life": 0.85, "enrichment": 3.2},
+    {"temperature": 564, "life": 0.86, "enrichment": 3.2},
+    {"temperature": 571, "life": 0.81, "enrichment": 3.3},
+    {"temperature": 576, "life": 0.79, "enrichment": 3.4}
+  ],
+  [
+    {"temperature": 552, "life": 0.91, "enrichment": 3.2},
+    {"temperature": 557, "life": 0.86, "enrichment": 3.3},
+    {"temperature": 565, "life": 0.83, "enrichment": 3.2},
+    {"temperature": 572, "life": 0.81, "enrichment": 3.4},
+    {"temperature": 578, "life": 0.76, "enrichment": 3.4},
+    {"temperature": 570, "life": 0.79, "enrichment": 3.3},
+    {"temperature": 564, "life": 0.84, "enrichment": 3.2},
+    {"temperature": 565, "life": 0.85, "enrichment": 3.2},
+    {"temperature": 572, "life": 0.80, "enrichment": 3.3},
+    {"temperature": 577, "life": 0.78, "enrichment": 3.4}
+  ]
+]

@@ -1,0 +1,5 @@
+Gen 1: best_fitness = -135.1357
+Gen 2: best_fitness = -135.1357
+Gen 3: best_fitness = -117.6562
+Gen 4: best_fitness = -117.6562
+Gen 5: best_fitness = -117.6562

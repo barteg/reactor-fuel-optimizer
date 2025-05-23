@@ -172,3 +172,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+<<<<<<< HEAD
+=======
+output/*.json
+>>>>>>> fa75363dd17daf7a5e939888cad7e28935f60d79

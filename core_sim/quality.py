@@ -3,10 +3,11 @@ def calculate_fa_quality(fa, grid):
     Oblicza jakość FA na podstawie własnych parametrów oraz sąsiadów (8-stronnych).
     Zakłada, że grid to CoreGrid lub 2D numpy array.
     """
+    print(f"FA: {fa}, type: {fa.fa_type}, position: {getattr(fa, 'position', None)}")
     # Obsługa gridu jako obiektu (CoreGrid) lub numpy array
     if hasattr(grid, "grid"):
         grid_array = grid.grid
-        size = grid.size
+        size = grid.width
     else:
         grid_array = grid
         size = grid.shape[0]
@@ -24,14 +25,14 @@ def calculate_fa_quality(fa, grid):
     for dx, dy in direct_neighbors:
         x, y = x0 + dx, y0 + dy
         if 0 <= x < size and 0 <= y < size:
-            neighbor = grid_array[x, y]
+            neighbor = grid_array[x][y]
             if neighbor:
                 influence += 1.0 * neighbor.enrichment * (1 - neighbor.life)
 
     for dx, dy in diagonal_neighbors:
         x, y = x0 + dx, y0 + dy
         if 0 <= x < size and 0 <= y < size:
-            neighbor = grid_array[x, y]
+            neighbor = grid_array[x][y]
             if neighbor:
                 influence += 0.5 * neighbor.enrichment * (1 - neighbor.life)
 
