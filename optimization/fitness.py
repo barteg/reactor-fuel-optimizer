@@ -1,18 +1,37 @@
-from .penalties import penalties
-from .hotspots import hotspots
-from .symmetry import symmetry
-from .energy import energy
+from penalties import penalties
+from hotspots import hotspots
+from symmetry import symmetry
+from energy import energy
+import copy
 
-def fitness(core_grid, w_temp=1.0, w_burnup=1.0, w_symmetry=1.0):
-    size = core_grid.width  # lub core_grid.height
-    N = size * size
-    FA_lifes = [core_grid.get_fa(x, y).life for x in range(size) for y in range(size)]
-    FA_energies = [energy(core_grid.get_fa(x, y).life, core_grid.get_fa(x, y).enrichment) for x in range(size) for y in range(size)]
-    FA_temperatures = calculate_temperatures(core_grid)
+def run_simulation_and_score(core_grid, num_steps=50, w_temp=1.0, w_burnup=1.0, w_symmetry=1.0):
+    """
+    Przeprowadza symulację zużywania FA przez num_steps kroków i wylicza fitness na końcu.
+    """
+    import copy
+    grid = copy.deepcopy(core_grid)
+    size = len(grid)
+
+    for step in range(num_steps):
+        # Aktualizacja FA
+        for x in range(size):
+            for y in range(size):
+                fa = grid[x][y]
+                neighbors = []
+                for dx, dy in [(-1,0),(1,0),(0,-1),(0,1)]:
+                    nx, ny = x+dx, y+dy
+                    if 0 <= nx < size and 0 <= ny < size:
+                        neighbors.append(grid[nx][ny])
+                fa.update(neighbors)
+
+    # --- Po symulacji oceniaj zużycie i scoring ---
+    FA_lifes = [grid[x][y].life for x in range(size) for y in range(size)]
+    FA_energies = [energy(grid[x][y].life, grid[x][y].enrichment) for x in range(size) for y in range(size)]
+    FA_temperatures = calculate_temperatures_grid(grid)
 
     penalty_temp = penalties(FA_temperatures, FA_lifes)
     penalty_burnup = hotspots(FA_lifes)
-    penalty_asymmetry = 1.0 - symmetry(FA_lifes, FA_energies, N)  # 0 = idealnie symetryczne
+    penalty_asymmetry = 1.0 - symmetry(FA_lifes, FA_energies, size * size)  # 0 = idealnie symetryczne
 
     fitness_score = -(
         w_temp * penalty_temp +
@@ -21,13 +40,12 @@ def fitness(core_grid, w_temp=1.0, w_burnup=1.0, w_symmetry=1.0):
     )
     return fitness_score
 
-# -- poniżej funkcja pomocnicza do temperatur --
-def calculate_temperatures(core_grid, k=0.1):
-    size = core_grid.width  # <- poprawka tutaj!
+def calculate_temperatures_grid(grid, k=0.1):
+    size = len(grid)
     temperatures = []
     for x in range(size):
         for y in range(size):
-            fa = core_grid.get_fa(x, y)
+            fa = grid[x][y]
             own_energy = energy(fa.life, fa.enrichment)
             neighbor_energies = []
             for dx in [-1,0,1]:
@@ -36,7 +54,7 @@ def calculate_temperatures(core_grid, k=0.1):
                         continue
                     nx, ny = x+dx, y+dy
                     if 0 <= nx < size and 0 <= ny < size:
-                        nfa = core_grid.get_fa(nx, ny)
+                        nfa = grid[nx][ny]
                         neighbor_energies.append(energy(nfa.life, nfa.enrichment))
             if neighbor_energies:
                 mean_neighbor = sum(neighbor_energies) / len(neighbor_energies)

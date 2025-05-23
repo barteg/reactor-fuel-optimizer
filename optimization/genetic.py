@@ -1,137 +1,159 @@
 import random
 import copy
-import numpy as np
+import json
+from optimization.fitness import run_simulation_and_score
 from core_sim.core_grid import CoreGrid
-from optimization.fitness import fitness
-
+import core_sim.fuel_assembly
+import os
 
 class Layout:
     def __init__(self, grid):
-        self.grid = grid  # 2D numpy array (CoreGrid.grid)
-        self.size = grid.shape[0]
-
-    def enforce_symmetry(self):
-        """Mirror the upper-left quadrant across both axes."""
-        n = self.size
-        for i in range(n):
-            for j in range(n):
-                mirrors = {
-                    (i, j),
-                    (n - 1 - i, j),
-                    (i, n - 1 - j),
-                    (n - 1 - i, n - 1 - j)
-                }
-                rep = min(mirrors)
-                rep_fa = copy.deepcopy(self.grid[rep])
-                for mi, mj in mirrors:
-                    self.grid[mi, mj] = copy.deepcopy(rep_fa)
+        self.grid = grid
 
     def evaluate(self):
-        """Ocena przez nową funkcję fitness."""
-        return fitness(self.grid)
+        return run_simulation_and_score(self.grid, num_steps=50)
 
+    def enforce_symmetry(self):
+        rows = len(self.grid)
+        cols = len(self.grid[0])
+        for i in range(rows):
+            for j in range(cols // 2):
+                self.grid[i][cols - j - 1] = copy.deepcopy(self.grid[i][j])
 
 class GAOptimizer:
-    def __init__(
-            self,
-            population_size=50,
-            generations=100,
-            mutation_rate=0.1,
-            crossover_rate=0.8,
-            layout_size=(20, 20),
-            num_fuel_types=3,
-            log_to_file=False
-    ):
+    def __init__(self, layout_size=(10, 10), population_size=30, generations=20, mutation_rate=0.2, elitism=2):
+        self.layout_size = layout_size
         self.population_size = population_size
         self.generations = generations
         self.mutation_rate = mutation_rate
-        self.crossover_rate = crossover_rate
-        self.layout_size = layout_size
-        self.num_fuel_types = num_fuel_types
-        self.log_to_file = log_to_file
+        self.elitism = elitism
 
     def initialize_population(self):
         pop = []
         for _ in range(self.population_size):
-            # Stwórz losowy układ FA, używając CoreGrid
-            core = CoreGrid(size=self.layout_size[0])
+            core = CoreGrid(self.layout_size[0], self.layout_size[1])
             grid = copy.deepcopy(core.grid)
+            for i in range(self.layout_size[0]):
+                for j in range(self.layout_size[1]):
+                    roll = random.random()
+                    if roll < 0.7:
+                        enr = random.choice([2.4, 3.2, 4.5])
+                        fa = core_sim.fuel_assembly.Fuel(enrichment=enr)
+                    elif roll < 0.8:
+                        fa = core_sim.fuel_assembly.ControlRod()
+                    elif roll < 0.9:
+                        fa = core_sim.fuel_assembly.Moderator()
+                    else:
+                        fa = core_sim.fuel_assembly.Blank()
+                    grid[i][j] = fa
             layout = Layout(grid)
             layout.enforce_symmetry()
             pop.append(layout)
         return pop
 
-    def select_parent(self, pop, fits):
-        # Turniej (3 losowych), lepszy wygrywa
-        tour = random.sample(list(zip(pop, fits)), 3)
-        tour.sort(key=lambda x: x[1], reverse=True)
-        return tour[0][0]
-
-    def crossover(self, p1, p2):
-        # Prosty crossover: dzielimy rzędy
-        cp = random.randint(1, self.layout_size[0] - 2)
-        new_grid = []
-        for r in range(self.layout_size[0]):
-            row = p1.grid[r] if r < cp else p2.grid[r]
-            new_grid.append(copy.deepcopy(row))
-        child_grid = np.array(new_grid)
-        child = Layout(child_grid)
+    def crossover(self, parent1, parent2):
+        size_x = len(parent1.grid)
+        size_y = len(parent1.grid[0])
+        grid1 = parent1.grid
+        grid2 = parent2.grid
+        new_grid = copy.deepcopy(grid1)
+        for i in range(size_x):
+            for j in range(size_y):
+                if random.random() < 0.5:
+                    new_grid[i][j] = copy.deepcopy(grid2[i][j])
+        child = Layout(new_grid)
         child.enforce_symmetry()
         return child
 
     def mutate(self, layout):
-        # Zamiana losowych FA miejscami
+        size_x = len(layout.grid)
+        size_y = len(layout.grid[0])
+        # Zamiana miejscami
         if random.random() < self.mutation_rate:
-            r1 = random.randrange(self.layout_size[0])
-            c1 = random.randrange(self.layout_size[1])
-            r2 = random.randrange(self.layout_size[0])
-            c2 = random.randrange(self.layout_size[1])
-            layout.grid[r1, c1], layout.grid[r2, c2] = layout.grid[r2, c2], layout.grid[r1, c1]
+            r1 = random.randrange(size_x)
+            c1 = random.randrange(size_y)
+            r2 = random.randrange(size_x)
+            c2 = random.randrange(size_y)
+            layout.grid[r1][c1], layout.grid[r2][c2] = layout.grid[r2][c2], layout.grid[r1][c1]
             layout.enforce_symmetry()
+        # Mutacja enrichment
+        if random.random() < self.mutation_rate:
+            r = random.randrange(size_x)
+            c = random.randrange(size_y)
+            fa = layout.grid[r][c]
+            if hasattr(fa, "enrichment"):
+                fa.enrichment = random.choice([2.4, 3.2, 4.5])
+        # Mutacja typu FA
+        if random.random() < self.mutation_rate:
+            r = random.randrange(size_x)
+            c = random.randrange(size_y)
+            typ = random.choice(["fuel", "control_rod", "moderator", "blank"])
+            if typ == "fuel":
+                layout.grid[r][c] = core_sim.fuel_assembly.Fuel(enrichment=random.choice([2.4, 3.2, 4.5]))
+            elif typ == "control_rod":
+                layout.grid[r][c] = core_sim.fuel_assembly.ControlRod()
+            elif typ == "moderator":
+                layout.grid[r][c] = core_sim.fuel_assembly.Moderator()
+            else:
+                layout.grid[r][c] = core_sim.fuel_assembly.Blank()
+
+    def select_parents(self, population, fitnesses):
+        idx1 = random.randint(0, len(population) - 1)
+        idx2 = random.randint(0, len(population) - 1)
+        return population[idx1] if fitnesses[idx1] > fitnesses[idx2] else population[idx2]
 
     def run(self):
         population = self.initialize_population()
-        best_log = []
+        best_layout = None
+        best_fitness = float("-inf")
 
         for gen in range(self.generations):
-            fits = [ind.evaluate() for ind in population]
+            fitnesses = [layout.evaluate() for layout in population]
+            gen_best_fitness = max(fitnesses)
+            gen_best_layout = population[fitnesses.index(gen_best_fitness)]
+            print(f"Gen {gen+1}: best_fitness = {gen_best_fitness:.4f}")
 
-            if gen == 0:
-                idxs = random.sample(range(len(population)), k=3)
-                print("\n>>> Smoketest: pierwsza generacja fitnessy <<<")
-                for idx in idxs:
-                    print(f"  Ind[{idx}].fitness = {fits[idx]:.4f}")
-                print(f"  Najlepszy[0] = {max(fits):.4f}\n")
+            if gen_best_fitness > best_fitness:
+                best_fitness = gen_best_fitness
+                best_layout = copy.deepcopy(gen_best_layout)
 
-            best_f = max(fits)
-            best_log.append((gen + 1, best_f))
-            print(f"Gen {gen + 1}/{self.generations} best fitness = {best_f:.2f}")
+            sorted_pop = [x for _, x in sorted(zip(fitnesses, population), key=lambda p: -p[0])]
+            new_population = sorted_pop[:self.elitism]
 
-            new_pop = []
-            for _ in range(self.population_size):
-                if random.random() < self.crossover_rate:
-                    p1 = self.select_parent(population, fits)
-                    p2 = self.select_parent(population, fits)
-                    child = self.crossover(p1, p2)
-                else:
-                    child = copy.deepcopy(self.select_parent(population, fits))
+            while len(new_population) < self.population_size:
+                p1 = self.select_parents(population, fitnesses)
+                p2 = self.select_parents(population, fitnesses)
+                child = self.crossover(p1, p2)
                 self.mutate(child)
-                new_pop.append(child)
+                new_population.append(child)
 
-            population = new_pop
+            population = new_population
 
-        fits = [ind.evaluate() for ind in population]
-        best_layout = population[int(np.argmax(fits))]
+        # Po zakończeniu zapisujemy najlepszy layout
+        def fa_to_dict(fa):
+            return {
+                "type": getattr(fa, "type", "blank"),
+                "life": getattr(fa, "life", 1.0),
+                "enrichment": getattr(fa, "enrichment", 0.0),
+                "temperature": getattr(fa, "temperature", 300.0),
+                "energy_output": getattr(fa, "energy_output", 0.0),
+                "total_energy": getattr(fa, "total_energy", 0.0)
+            }
+        best_grid_dict = [
+            [fa_to_dict(best_layout.grid[i][j]) for j in range(self.layout_size[1])]
+            for i in range(self.layout_size[0])
+        ]
+        os.makedirs("visualization/data", exist_ok=True)
+        with open("visualization/data/best_layout.json", "w") as f:
+            json.dump(best_grid_dict, f, indent=2)
+        print("Zapisano najlepszy layout do visualization/data/best_layout.json")
 
-        if self.log_to_file:
-            with open("smoketest_log.txt", "w") as f:
-                for gen, bf in best_log:
-                    f.write(f"Gen {gen}: best_fitness = {bf:.4f}\n")
-            print("Log saved to smoketest_log.txt")
-
-        return best_layout
-
-
-def run_genetic_algorithm(**kwargs):
-    optimizer = GAOptimizer(**kwargs)
-    return optimizer.run()
+if __name__ == "__main__":
+    ga = GAOptimizer(
+        layout_size=(10, 10),      # lub (20, 20)
+        population_size=20,
+        generations=15,
+        mutation_rate=0.2,
+        elitism=2
+    )
+    ga.run()
