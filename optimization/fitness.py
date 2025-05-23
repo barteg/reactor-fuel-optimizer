@@ -4,20 +4,14 @@ from .symmetry import symmetry
 from .energy import energy
 
 def fitness(core_grid, w_temp=1.0, w_burnup=1.0, w_symmetry=1.0):
-    """
-    Oblicza fitness jako ujemną sumę kar za:
-      - przekroczenie temperatury,
-      - hotspoty/różnice burnupu (tylko sąsiedzi 8-stronni),
-      - asymetrię.
-    """
-    size = core_grid.shape[0]
+    size = core_grid.width  # lub core_grid.height
     N = size * size
-    FA_lifes = [core_grid[x, y].life for x in range(size) for y in range(size)]
-    FA_energies = [energy(core_grid[x, y].life, core_grid[x, y].enrichment) for x in range(size) for y in range(size)]
+    FA_lifes = [core_grid.get_fa(x, y).life for x in range(size) for y in range(size)]
+    FA_energies = [energy(core_grid.get_fa(x, y).life, core_grid.get_fa(x, y).enrichment) for x in range(size) for y in range(size)]
     FA_temperatures = calculate_temperatures(core_grid)
 
     penalty_temp = penalties(FA_temperatures, FA_lifes)
-    penalty_burnup = hotspots(core_grid)
+    penalty_burnup = hotspots(FA_lifes)
     penalty_asymmetry = 1.0 - symmetry(FA_lifes, FA_energies, N)  # 0 = idealnie symetryczne
 
     fitness_score = -(
@@ -27,16 +21,13 @@ def fitness(core_grid, w_temp=1.0, w_burnup=1.0, w_symmetry=1.0):
     )
     return fitness_score
 
-# -- poniżej funkcja pomocnicza do temperatur, można ją dać do osobnego pliku --
+# -- poniżej funkcja pomocnicza do temperatur --
 def calculate_temperatures(core_grid, k=0.1):
-    """
-    Liczy temperatury FA: T = energia własna + k * średnia energia sąsiadów (8-stronnych).
-    """
-    size = core_grid.shape[0]
+    size = core_grid.width  # <- poprawka tutaj!
     temperatures = []
     for x in range(size):
         for y in range(size):
-            fa = core_grid[x, y]
+            fa = core_grid.get_fa(x, y)
             own_energy = energy(fa.life, fa.enrichment)
             neighbor_energies = []
             for dx in [-1,0,1]:
@@ -45,7 +36,7 @@ def calculate_temperatures(core_grid, k=0.1):
                         continue
                     nx, ny = x+dx, y+dy
                     if 0 <= nx < size and 0 <= ny < size:
-                        nfa = core_grid[nx, ny]
+                        nfa = core_grid.get_fa(nx, ny)
                         neighbor_energies.append(energy(nfa.life, nfa.enrichment))
             if neighbor_energies:
                 mean_neighbor = sum(neighbor_energies) / len(neighbor_energies)
@@ -54,5 +45,3 @@ def calculate_temperatures(core_grid, k=0.1):
             T = own_energy + k * mean_neighbor
             temperatures.append(T)
     return temperatures
-
-# -- import funkcji energy --
