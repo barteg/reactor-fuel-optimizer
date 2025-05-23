@@ -34,7 +34,7 @@ class Fuel(FuelAssembly):
         avg_neighbor_temp = sum(n.temperature for n in neighbors if n) / len(neighbors)
         neighbor_bonus = avg_neighbor_temp * 0.05 if neighbors else 0.0
         self.temperature = 300 + temp_from_output + neighbor_bonus
-        self.life *= 0.999  # Simple burnup model
+        self.life *= 0.995  # Simple burnup model
         self.total_energy += self.energy_output
 
     @property
