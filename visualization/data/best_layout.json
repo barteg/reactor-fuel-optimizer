@@ -1,0 +1,822 @@
+[
+  [
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 323.96,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.3593333333333,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.36598888888886,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.3660998148148,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.36610166358025,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.36610169439297,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.36610169490655,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.3661016949151,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.36610169491524,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5691525423729,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    }
+  ],
+  [
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 331.02599999999995,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.65231666666665,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5727288194444,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5717353579282,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57172296276883,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57172280821453,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.571722806289,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57172280626503,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57172280626475,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.7790145891439,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    }
+  ],
+  [
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.47709999999995,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5741177083333,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743355815972,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743258867441,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57432561061887,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743256052354,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57432560514405,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743256051426,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743256051426,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.78255566990475,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    }
+  ],
+  [
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.36795166666667,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57177586718745,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743263931098,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57435815349817,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743585470514,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743585519036,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743585519631,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743585519638,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743585519638,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.7826152370311,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    }
+  ],
+  [
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.3661325277778,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57172385493703,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57432562810055,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57435854727,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.574358963679,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57435896894475,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743589690113,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57435896901217,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57435896901217,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.78261623676735,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    }
+  ],
+  [
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.3661022087963,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57172282579666,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743256056737,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57435855191176,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57435896894486,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 329.5743589742236,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.6368589742904,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57514022429126,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743687399163,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.782616416278,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    }
+  ],
+  [
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.3661017034799,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5717228066159,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743256051536,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743585519633,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 329.5743589690113,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.6993589742904,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57670272435723,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743980368581,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57435958470967,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.78261626668314,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    }
+  ],
+  [
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.366101695058,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5717228062709,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743256051428,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743585519638,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.63685896901217,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 329.57670272429124,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.63691756810806,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57514144506206,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57436876287215,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.78261641715926,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    }
+  ],
+  [
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 331.03276836158426,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.6550561395982,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5753672718092,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57437157279713,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 329.5751403817726,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 329.6993980388258,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.63920394508665,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.57517931737686,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.5743693510031,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.78261642946933,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    }
+  ],
+  [
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.73581920903956,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.78318125581063,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.7826424754603,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.78261690080427,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 331.5326292880429,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.98053378878114,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.7869956288978,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.7827029157712,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 324.7826178711129,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    },
+    {
+      "type": "fuel",
+      "life": 0.999,
+      "temperature": 325.19913085751455,
+      "enrichment": 3.2,
+      "energy_output": 2.5600000000000005,
+      "total_energy": 2.5600000000000005
+    }
+  ]
+]
