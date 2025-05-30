@@ -1,70 +1,50 @@
-
 from core_sim.core_grid import CoreGrid
-from visualization.plot_core import plot_core
-
-def main():
-    # Tworzenie rdzenia
-    core = CoreGrid(size=20)
-
-    # Wyświetlanie kilku przykładowych FA
-    fas = core.get_all_fuel_assemblies()
-    sample_fas = [fa for fa in fas if fa.fa_type == "movable"][:5]
-
-    print("Sample Movable Fuel Assemblies:")
-    for fa in sample_fas:
-        print(fa)
-
-    # Rysowanie siatki
-    plot_core(core)
-
-if __name__ == "__main__":
-    main()
-# main.py
-
-from core_sim.core_grid import CoreGrid
-from core_sim.fuel_assembly import Fuel, ControlRod, Moderator, Blank
 from core_sim.simulator import Simulator
 from core_sim.recorder import Recorder
-#from visualization.visualize import plot_static_heatmap, animate_heatmap_over_time
-import random
-
-GRID_WIDTH = 30
-GRID_HEIGHT = 30
-MAX_TIMESTEPS = 730
-
-def initialize_core(width=30, height=30):
-    grid = CoreGrid(GRID_WIDTH, GRID_HEIGHT)
-
-    for y in range(height):
-        for x in range(width):
-            if x == 0 or x == width - 1 or y == 0 or y == height - 1:
-                fa = Moderator
-            elif (x % 7 == 0 and y % 5 == 0):
-                fa = ControlRod
-            elif random.random() < 0.05:
-                fa = Blank
-            else:
-                enrichment = round(random.uniform(2.0, 4.5), 2)
-                fa = Fuel(enrichment=enrichment, is_movable=True)
-
-            grid.insert_fa(x, y, fa)
-
-    return grid
+from core_sim.penalties import PenaltyCalculator
+from layout_utils.load_layout import load_layout
+from visualization.plot_flux import animate_flux_map
+MAX_TIMESTEPS = 1000
 
 def main():
-    layout_path = "output/special_layout.json"  # Make sure this path is correct
-    grid = CoreGrid(width=30, height=30)
-    grid.initialize_from_layout(layout_path)
+    layout_path = "layouts/test_layout.json"
+    log_path = "output/simulation_log.json"
 
-    recorder = Recorder(grid_shape=(GRID_HEIGHT, GRID_WIDTH), total_steps=MAX_TIMESTEPS)
-    simulator = Simulator(grid, recorder=recorder, max_timesteps=730)
+    # Load layout from JSON file
+    layout = load_layout(layout_path)
+
+    # Initialize CoreGrid with loaded layout dimensions
+    grid = CoreGrid(width=layout["width"], height=layout["height"])
+    grid.initialize_from_layout(layout)
+
+    # Set up recorder and simulator
+    recorder = Recorder(grid_shape=(layout["height"], layout["width"]), total_steps=MAX_TIMESTEPS)
+    sim = Simulator(grid=grid, max_timesteps=MAX_TIMESTEPS, config={
+        "weights": {
+            "total_energy": 3.0,
+            "life_uniformity": 1.5,
+            "thermal_stability": 1.0,
+            "penalties": 5.0
+        },
+        "reference_max_energy": 2500.0,
+        "return_breakdown": True
+    })
+    sim.run()
 
     print("⏳ Running simulation...")
-    simulator.run()
 
-    recorder.export_path("simulation_log.json")
+    # Export simulation log
+    recorder.save(log_path)
+    print("✅ Simulation complete.")
 
-    print("✅ Simulation complete. Visualizing...")
+    # Evaluate penalties on final grid state
+    penalty_calc = PenaltyCalculator()
+    penalties = penalty_calc.evaluate(grid)
 
+    print("🔎 Final penalty breakdown:")
+    print(f"  🔥 Temperature Penalty: {penalties['temp']:.4f}")
+    print(f"  🌡️ Hotspot Penalty:     {penalties['hotspot']:.4f}")
+    print(f"  🪞 Symmetry Score:      {penalties['symmetry']:.4f}")
+    print(f"  ⚖️ Weights:              {penalties['weights']}")
 if __name__ == "__main__":
     main()

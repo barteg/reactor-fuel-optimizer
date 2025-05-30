@@ -1,65 +1,84 @@
-from penalties import penalties
-from hotspots import hotspots
-from symmetry import symmetry
-from energy import energy
-import copy
+import numpy as np
 
-def run_simulation_and_score(core_grid, num_steps=50, w_temp=1.0, w_burnup=1.0, w_symmetry=1.0):
+DEFAULT_WEIGHTS = {
+    "total_energy": 3.0,
+    "life_uniformity": 1.5,
+    "thermal_stability": 1.0,
+    "penalties": 5.0
+}
+
+# Penalty thresholds
+TEMP_LIMIT = 1500  # K
+LIFE_THRESHOLD = 0.05  # Fraction
+UNUSED_ENRICHMENT_THRESHOLD = 1.0  # Output per enrichment
+
+def compute_fitness(meta_history, grid_history, config=None):
     """
-    Przeprowadza symulację zużywania FA przez num_steps kroków i wylicza fitness na końcu.
+    Computes the fitness score for a fuel assembly layout based on a time-evolving simulation.
+
+    Args:
+        meta_history (list[dict]): Simulation meta data over time.
+        grid_history (list[list[list[dict]]]): Simulation grid data over time.
+        config (dict): Optional config with weights and penalty settings.
+
+    Returns:
+        fitness_score (float)
     """
-    import copy
-    grid = copy.deepcopy(core_grid)
-    size = len(grid)
 
-    for step in range(num_steps):
-        # Aktualizacja FA
-        for x in range(size):
-            for y in range(size):
-                fa = grid[x][y]
-                neighbors = []
-                for dx, dy in [(-1,0),(1,0),(0,-1),(0,1)]:
-                    nx, ny = x+dx, y+dy
-                    if 0 <= nx < size and 0 <= ny < size:
-                        neighbors.append(grid[nx][ny])
-                fa.update(neighbors)
+    weights = config.get("weights", DEFAULT_WEIGHTS) if config else DEFAULT_WEIGHTS
+    final_meta = meta_history[-1]
+    final_grid = grid_history[-1]
 
-    # --- Po symulacji oceniaj zużycie i scoring ---
-    FA_lifes = [grid[x][y].life for x in range(size) for y in range(size)]
-    FA_energies = [energy(grid[x][y].life, grid[x][y].enrichment) for x in range(size) for y in range(size)]
-    FA_temperatures = calculate_temperatures_grid(grid)
+    # --- 1. Total Energy Output ---
+    total_energy = final_meta.get("total_energy", 0.0)
+    max_energy = config.get("reference_max_energy", 2000.0) if config else 2000.0
+    energy_score = total_energy / max_energy
 
-    penalty_temp = penalties(FA_temperatures, FA_lifes)
-    penalty_burnup = hotspots(FA_lifes)
-    penalty_asymmetry = 1.0 - symmetry(FA_lifes, FA_energies, size * size)  # 0 = idealnie symetryczne
+    # --- 2. Fuel Life Uniformity ---
+    fuel_lives = [
+        fa["life"]
+        for row in final_grid
+        for fa in row
+        if fa["type"] == "fuel"
+    ]
+    life_uniformity_score = 1.0 - np.std(fuel_lives) if fuel_lives else 0.0
 
-    fitness_score = -(
-        w_temp * penalty_temp +
-        w_burnup * penalty_burnup +
-        w_symmetry * penalty_asymmetry
+    # --- 3. Thermal Stability ---
+    fuel_temps = [
+        fa["temperature"]
+        for row in final_grid
+        for fa in row
+        if fa["type"] == "fuel"
+    ]
+    temp_variance = np.var(fuel_temps) if fuel_temps else 1e6
+    thermal_stability_score = 1.0 / (1.0 + temp_variance)
+
+    # --- 4. Penalties ---
+    overheating_penalty = sum(
+        1.0 for row in final_grid for fa in row
+        if fa["type"] == "fuel" and fa["temperature"] > TEMP_LIMIT
     )
-    return fitness_score
 
-def calculate_temperatures_grid(grid, k=0.1):
-    size = len(grid)
-    temperatures = []
-    for x in range(size):
-        for y in range(size):
-            fa = grid[x][y]
-            own_energy = energy(fa.life, fa.enrichment)
-            neighbor_energies = []
-            for dx in [-1,0,1]:
-                for dy in [-1,0,1]:
-                    if dx == 0 and dy == 0:
-                        continue
-                    nx, ny = x+dx, y+dy
-                    if 0 <= nx < size and 0 <= ny < size:
-                        nfa = grid[nx][ny]
-                        neighbor_energies.append(energy(nfa.life, nfa.enrichment))
-            if neighbor_energies:
-                mean_neighbor = sum(neighbor_energies) / len(neighbor_energies)
-            else:
-                mean_neighbor = 0
-            T = own_energy + k * mean_neighbor
-            temperatures.append(T)
-    return temperatures
+    dead_fuel_penalty = sum(
+        1.0 for row in final_grid for fa in row
+        if fa["type"] == "fuel" and fa["life"] < LIFE_THRESHOLD
+    )
+
+    unused_enrichment_penalty = sum(
+        fa["enrichment"]
+        for row in final_grid
+        for fa in row
+        if fa["type"] == "fuel" and fa.get("total_energy", 0.0) / max(fa["enrichment"], 1e-6) < UNUSED_ENRICHMENT_THRESHOLD
+    )
+
+    total_penalty = overheating_penalty + dead_fuel_penalty + unused_enrichment_penalty
+
+    # --- Weighted Score Composition ---
+    fitness_score = (
+        weights["total_energy"] * energy_score +
+        weights["life_uniformity"] * life_uniformity_score +
+        weights["thermal_stability"] * thermal_stability_score -
+        weights["penalties"] * total_penalty
+    )
+
+    return fitness_score
