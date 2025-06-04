@@ -1,4 +1,8 @@
 import numpy as np
+import math
+
+from sympy.physics.units import temperature
+
 
 class FuelAssembly:
     def __init__(self, enrichment=0.0, life=1.0, is_movable=False, temperature=300):
@@ -25,6 +29,24 @@ class FuelAssembly:
         else:
             return {"flux_multiplier": 1.0}
 
+    def neutron_yield(self) -> float:
+        if self.type == "fuel":
+            return self.enrichment * 1.5
+        elif self.type == "moderator":
+            return 0.1
+        elif self.type == "control_rod":
+            return 0.0
+        return 0.0
+
+    def absorption_factor(self) -> float:
+        if self.type == "fuel":
+            return 0.7
+        elif self.type == "moderator":
+            return 0.3
+        elif self.type == "control_rod":
+            return 1.0
+        return 0.0
+
     def as_dict(self):
         return {
             "type": self.type,
@@ -42,94 +64,131 @@ class FuelAssembly:
 
 class Fuel(FuelAssembly):
     def __init__(self, enrichment, life=1.0, is_movable=True):
-        super().__init__(enrichment=enrichment, life=life, is_movable=is_movable, temperature=600)
+        super().__init__(enrichment=enrichment, life=life, is_movable=is_movable, temperature=1500)
         self.type = "fuel"
-
-    def influence_on(self, other):
-        temp_penalty = max(0.8, 1.0 - 0.0005 * (self.temperature - 300))
-        burn_penalty = 0.8 + 0.4 * self.life
-        return {"flux_multiplier": burn_penalty * temp_penalty, "cooling_effect": -0.5}
-
+        self.age = 0
 
     def update(self, neighbors, flux=1.0):
+        self.age += 1
+
+        # Let neighbors adjust based on this fuel's current temperature
+        for neighbor in neighbors:
+            if isinstance(neighbor, Moderator):
+                self.temperature += neighbor.thermal_power * 5.0  # Apply influence
+            elif isinstance(neighbor, ControlRod):
+                self.temperature -= neighbor.thermal_power * 5.0  # Reduce temp if needed
+
         valid_neighbors = [n for n in neighbors if isinstance(n, FuelAssembly)]
-        avg_temp = sum(n.temperature for n in valid_neighbors) / len(valid_neighbors) if valid_neighbors else 300.0
+        avg_temp = (
+            sum(n.temperature for n in valid_neighbors) / len(valid_neighbors)
+            if valid_neighbors else 300.0
+        )
 
-        flux_modifier = 1.0
-        cooling_effect_sum = 0.0
+        # Calculate flux modifier from neighbors with updated states
+        flux_modifier = np.prod([n.influence_on(self).get("flux_multiplier", 1.0) for n in valid_neighbors])
+        soft_flux_decay = 1.0 - 0.0002 * self.age
+        core_flux = flux * 100
+        local_flux = core_flux * flux_modifier * soft_flux_decay
+        flux_factor = min(local_flux / core_flux, 1.0)
 
-        for neighbor in valid_neighbors:
-            influence = neighbor.influence_on(self)
-            flux_modifier *= influence.get("flux_multiplier", 1.0)
-            cooling_effect_sum += influence.get("cooling_effect", 0.0)
+        # Constants for temperature effect
+        T_opt = 1000.0
+        sigma_T = 200.0
+        gamma = 1.5
+        C = 12000.0
+        C_th = 5000.0
+        cooling_coeff = 40.0
+        burn_rate_base = 0.0004
 
-        T_opt = 900.0  # Optimal temp for power output (Kelvin)
-        alpha = 0.005  # Temperature penalty coefficient (higher to penalize more)
-        gamma = 3.0  # Enrichment effectiveness factor
-        C = 10000.0  # Energy output scale factor (Watt scale)
-        C_th = 10000.0  # Thermal capacity (J/K), per assembly effective
-        cooling_coefficient = 50.0  # Heat loss coefficient (W/K)
+        enrichment_term = gamma * self.enrichment / (1 + gamma * self.enrichment)
+        temp_diff = self.temperature - T_opt
+        temp_factor = math.exp(-0.5 * (temp_diff / sigma_T) ** 2)
 
-        local_flux = flux * flux_modifier * 100
-        flux_factor = min(local_flux / 100.0, 1.0)
+        self.energy_output = flux_factor * self.life * enrichment_term * temp_factor * C
 
-        # Energy output calculation
-        enrichment_term = 1 - np.exp(-gamma * self.enrichment)
-        temp_ratio = (self.temperature / T_opt) - 1
-        temperature_penalty = max(0.0, 1 - alpha * temp_ratio ** 2)
-        life_term = self.life
-        self.energy_output = flux_factor * life_term * enrichment_term * temperature_penalty * C  # Watts
+        heating = self.energy_output
+        cooling = cooling_coeff * (self.temperature - avg_temp)
+        delta_T = (heating - cooling) / C_th
+        self.temperature = max(300.0, min(self.temperature + delta_T, 1800.0))
 
-        # Temperature update
-        heating = self.energy_output  # Watts = J/s
-        cooling = cooling_coefficient * (self.temperature - avg_temp) + cooling_effect_sum  # Watts
-        net_power = heating - cooling  # Watts (J/s)
-
-        # Convert power to temperature change per timestep (1 second)
-        delta_T = net_power / C_th  # K per second
-
-        # Update temperature with physical limits
-        self.temperature = max(300.0, min(self.temperature + delta_T, 1500.0))
-
-        # Life degradation
-        burn_rate = 0.0005 * (1 + flux_factor) * (1 + (self.temperature - 300) / 1000)
-        self.life = max(0.0, self.life * (1 - burn_rate))
-
-        self.total_energy += self.energy_output  # Accumulate total energy produced
-
+        overheat_factor = 1.0 + max(0, (self.temperature - 600))
+        burn_rate = burn_rate_base * overheat_factor
+        energy_frac = self.energy_output / C
+        self.life = max(0.0, self.life * (1 - burn_rate * energy_frac))
+        self.total_energy += self.energy_output
 
 class ControlRod(FuelAssembly):
     def __init__(self):
         super().__init__(enrichment=0.0, is_movable=False, temperature=450)
         self.type = "control_rod"
-
-    def influence_on(self, other):
-        return {"flux_multiplier": 0.6, "cooling_effect": -10.0}
+        self.insertion_level = 0.5  # Range: 0 (out) to 1 (fully in)
+        self.thermal_power = 1.0    # Acts as a "cooling influence" constant
 
     def update(self, neighbors, flux=0.0):
-        self.energy_output = 0.0
         self.temperature = 450
+
+        # React to surrounding fuel temperatures
+        fuel_temps = [n.temperature for n in neighbors if isinstance(n, Fuel)]
+        if not fuel_temps:
+            return
+
+        avg_temp = sum(fuel_temps) / len(fuel_temps)
+
+        if avg_temp > 1600:
+            self.insertion_level = min(1.0, self.insertion_level + 0.05)
+        elif avg_temp < 1000:
+            self.insertion_level = max(0.0, self.insertion_level - 0.05)
+
+    def influence_on(self, other):
+        return {
+            "flux_multiplier": 1.0 - self.insertion_level * 0.7,
+            "temperature_effect": -self.thermal_power * self.insertion_level * 5.0
+        }
+
+    def influence_on(self, other):
+        # Influence on nearby assemblies via flux multiplier
+        return {
+            "flux_multiplier": 1.0 - self.insertion_level * 0.7  # up to 70% reduction
+        }
+    def influence_on(self, target):
+        # Control rod reduces flux proportional to insertion level
+        flux_multiplier = 1.0 - self.insertion_level * 0.7
+        return {"flux_multiplier": flux_multiplier}
 
 
 class Moderator(FuelAssembly):
     def __init__(self):
         super().__init__(enrichment=0.0, is_movable=False, temperature=320)
         self.type = "moderator"
-
-    def influence_on(self, other):
-        return {"flux_multiplier": 1.1, "cooling_effect": 2.0}
+        self.thermal_power = 1.0
 
     def update(self, neighbors, flux=0.0):
+        # Adjust thermal influence factor based on nearby hot fuel
+        nearby_fuel_temps = [n.temperature for n in neighbors if isinstance(n, Fuel)]
+        avg_fuel_temp = np.mean(nearby_fuel_temps) if nearby_fuel_temps else 1000.0
+
+        # Adjust moderator thermal influence depending on avg fuel temperature
+        if avg_fuel_temp > 1500:
+            self.thermal_power = max(0.1, self.thermal_power - 0.1)
+        elif avg_fuel_temp < 1000:
+            self.thermal_power = min(2.0, self.thermal_power + 0.1)
+
+        # Reset temperature
         self.temperature = 320
+
+    def influence_on(self, target):
+        if isinstance(target, Fuel):
+            # Moderator increases temp by its thermal power
+            return {"temp_offset": self.thermal_power * 5.0}
+        return {}
+
+
 
 
 class Blank(FuelAssembly):
     def __init__(self):
         super().__init__(enrichment=0.0, is_movable=False, temperature=300)
         self.type = "blank"
-
-    def influence_on(self, other):
-        return {"flux_multiplier": 1.0, "cooling_effect": 0.0}
 
     def update(self, neighbors, flux=0.0):
         self.temperature = 300

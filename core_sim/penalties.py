@@ -88,18 +88,7 @@ class PenaltyCalculator:
         return compute_hotspots(grid, self.HOTSPOT_LIFE_DIFF)
 
     def _penalty_symmetry(self, grid):
-        FA_lifes = []
-        FA_energies = []
-
-        for y in range(grid.height):
-            for x in range(grid.width):
-                fa = grid.get_fa(x, y)
-                if isinstance(fa, FuelAssembly):
-                    FA_lifes.append(fa.life)
-                    FA_energies.append(fa.energy_output)
-
-        N = len(FA_lifes)
-        return symmetry_score(FA_lifes, FA_energies, N)
+        return symmetry_score(grid)
 
     def _compare_symmetry(self, fa1, fa2):
         if not isinstance(fa1, FuelAssembly) or not isinstance(fa2, FuelAssembly):

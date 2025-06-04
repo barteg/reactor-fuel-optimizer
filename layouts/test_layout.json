@@ -2,18 +2,836 @@
   "width": 15,
   "height": 15,
   "grid": [
-    ["Blank", "Blank", "Blank", "ControlRod", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "ControlRod", "Blank", "Blank", "Blank"],
-    ["Blank", "Moderator", {"fa_type": "Fuel", "enrichment": 3.2, "life": 0.85, "is_movable": true}, "Moderator", "Blank", "Blank", "ControlRod", "Blank", "ControlRod", "Blank", "Blank", "Moderator", {"fa_type": "Fuel", "enrichment": 3.2, "life": 0.85, "is_movable": true}, "Moderator", "Blank"],
-    ["Blank", {"fa_type": "Fuel", "enrichment": 3.3, "life": 0.82, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 3.4, "life": 0.80, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 3.5, "life": 0.78, "is_movable": true}, "Moderator", {"fa_type": "Fuel", "enrichment": 3.6, "life": 0.75, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 3.7, "life": 0.72, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 3.8, "life": 0.70, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 3.7, "life": 0.72, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 3.6, "life": 0.75, "is_movable": true}, "Moderator", {"fa_type": "Fuel", "enrichment": 3.5, "life": 0.78, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 3.4, "life": 0.80, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 3.3, "life": 0.82, "is_movable": true}, "Blank"],
-    ["ControlRod", "Moderator", {"fa_type": "Fuel", "enrichment": 3.5, "life": 0.81, "is_movable": true}, "Moderator", {"fa_type": "Fuel", "enrichment": 3.6, "life": 0.78, "is_movable": true}, "Blank", "Blank", "Moderator", "Blank", "Blank", {"fa_type": "Fuel", "enrichment": 3.6, "life": 0.78, "is_movable": true}, "Moderator", {"fa_type": "Fuel", "enrichment": 3.5, "life": 0.81, "is_movable": true}, "Moderator", "ControlRod"],
-    ["Blank", "Blank", {"fa_type": "Fuel", "enrichment": 3.8, "life": 0.76, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.0, "life": 0.74, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.2, "life": 0.71, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.4, "life": 0.69, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.5, "life": 0.67, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.5, "life": 0.67, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.4, "life": 0.69, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.2, "life": 0.71, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.0, "life": 0.74, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 3.8, "life": 0.76, "is_movable": true}, "Blank", "Blank", "Blank"],
-    ["Blank", "Moderator", "Moderator", {"fa_type": "Fuel", "enrichment": 4.1, "life": 0.75, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.3, "life": 0.73, "is_movable": true}, "Moderator", "Blank", "Blank", "Moderator", {"fa_type": "Fuel", "enrichment": 4.3, "life": 0.73, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.1, "life": 0.75, "is_movable": true}, "Moderator", "Moderator", "Blank", "Blank"],
-    ["Blank", "Blank", {"fa_type": "Fuel", "enrichment": 4.0, "life": 0.78, "is_movable": true}, "Blank", "Blank", {"fa_type": "Fuel", "enrichment": 4.6, "life": 0.65, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.8, "life": 0.62, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.6, "life": 0.65, "is_movable": true}, "Blank", "Blank", {"fa_type": "Fuel", "enrichment": 4.0, "life": 0.78, "is_movable": true}, "Blank", "Blank", "Blank", "Blank"],
-    ["Blank", "Moderator", "Moderator", "Blank", "Blank", {"fa_type": "Fuel", "enrichment": 4.2, "life": 0.70, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.4, "life": 0.68, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.2, "life": 0.70, "is_movable": true}, "Blank", "Blank", "Moderator", "Moderator", "Blank", "Blank", "Blank"],
-    ["Blank", "Blank", {"fa_type": "Fuel", "enrichment": 4.1, "life": 0.73, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.2, "life": 0.70, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.3, "life": 0.68, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.5, "life": 0.65, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.7, "life": 0.62, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.5, "life": 0.65, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.3, "life": 0.68, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.2, "life": 0.70, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 4.1, "life": 0.73, "is_movable": true}, "Blank", "Blank", "Blank", "Blank"],
-    ["ControlRod", "Moderator", {"fa_type": "Fuel", "enrichment": 3.8, "life": 0.76, "is_movable": true}, "Moderator", {"fa_type": "Fuel", "enrichment": 3.6, "life": 0.78, "is_movable": true}, "Blank", "Blank", "Moderator", "Blank", "Blank", {"fa_type": "Fuel", "enrichment": 3.6, "life": 0.78, "is_movable": true}, "Moderator", {"fa_type": "Fuel", "enrichment": 3.8, "life": 0.76, "is_movable": true}, "Moderator", "ControlRod"],
-    ["Blank", {"fa_type": "Fuel", "enrichment": 3.4, "life": 0.80, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 3.5, "life": 0.78, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 3.6, "life": 0.75, "is_movable": true}, "Moderator", {"fa_type": "Fuel", "enrichment": 3.7, "life": 0.72, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 3.8, "life": 0.70, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 3.7, "life": 0.72, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 3.6, "life": 0.75, "is_movable": true}, "Moderator", {"fa_type": "Fuel", "enrichment": 3.5, "life": 0.78, "is_movable": true}, {"fa_type": "Fuel", "enrichment": 3.4, "life": 0.80, "is_movable": true}, "Blank", "Blank", "Blank"],
-    ["Blank", "Moderator", {"fa_type": "Fuel", "enrichment": 3.3, "life": 0.82, "is_movable": true}, "Moderator", "Blank", "Blank", "ControlRod", "Blank", "ControlRod", "Blank", "Blank", "Moderator", {"fa_type": "Fuel", "enrichment": 3.3, "life": 0.82, "is_movable": true}, "Moderator", "Blank"],
-    ["Blank", "Blank", "Blank", "ControlRod", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "ControlRod", "Blank", "Blank", "Blank"]
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      }
+    ],
+    [
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      }
+    ],
+    [
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Moderator"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Moderator"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Moderator"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ]
   ]
 }

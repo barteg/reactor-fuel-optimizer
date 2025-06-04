@@ -18,7 +18,6 @@ def main():
     grid.initialize_from_layout(layout)
 
     # Set up recorder and simulator
-    recorder = Recorder(grid_shape=(layout["height"], layout["width"]), total_steps=MAX_TIMESTEPS)
     sim = Simulator(grid=grid, max_timesteps=MAX_TIMESTEPS, config={
         "weights": {
             "total_energy": 3.0,
@@ -34,7 +33,7 @@ def main():
     print("⏳ Running simulation...")
 
     # Export simulation log
-    recorder.save(log_path)
+   # recorder.save(log_path)
     print("✅ Simulation complete.")
 
     # Evaluate penalties on final grid state
