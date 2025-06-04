@@ -10,7 +10,7 @@ from optimization.fitness import compute_fitness
 from core_sim.recorder import Recorder
 
 class Simulator:
-    def __init__(self, grid: CoreGrid, max_timesteps, output_path="output/simulation_log.npz", config=None):
+    def __init__(self, grid: CoreGrid, max_timesteps, output_path="output/simulation_log.json", config=None):
         self.grid = grid
         self.T = max_timesteps
         self.current_step = 0
