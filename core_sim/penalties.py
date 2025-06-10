@@ -1,5 +1,5 @@
 import math
-from core_sim.fuel_assembly import FuelAssembly
+from core_sim.empty import FuelAssembly
 from optimization.hotspots import compute_hotspots
 from optimization.temperature import temperature_penalty
 from optimization.symmetry import symmetry_score

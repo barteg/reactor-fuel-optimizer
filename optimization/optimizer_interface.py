@@ -1,5 +1,5 @@
 # optimizer_interface.py
-from core_sim.fuel_assembly import Fuel
+from core_sim.empty import Fuel
 from core_sim.recorder import Recorder
 from models.penalty_model import PenaltyModel
 from models.energy_output_model import EnergyOutputModel

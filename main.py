@@ -1,49 +1,69 @@
+import argparse
+import os
+import json
+
 from core_sim.core_grid import CoreGrid
 from core_sim.simulator import Simulator
-from core_sim.recorder import Recorder
-from core_sim.penalties import PenaltyCalculator
 from layout_utils.load_layout import load_layout
-from visualization.plot_flux import animate_flux_map
-MAX_TIMESTEPS = 1000
+from optimization.batch_runner import evaluate_layouts_in_batch
+from core_sim.constants import TIMESTEPS  # Make sure this exists
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Reactor Fuel Optimizer Simulation")
+    parser.add_argument(
+        "--layout", type=str, default="layouts/test_layout1.json",
+        help="Path to layout JSON file (ignored in batch mode)"
+    )
+    parser.add_argument(
+        "--output", type=str, default="output/single_run_log.json",
+        help="Path to output log file (ignored in batch mode)"
+    )
+    parser.add_argument(
+        "--timesteps", type=int, default=TIMESTEPS,
+        help="Number of simulation timesteps"
+    )
+    parser.add_argument(
+        "--batch", action="store_true",
+        help="Run batch evaluation mode (processes all layouts in layouts/batch/)"
+    )
+    parser.add_argument(
+        "--batch-dir", type=str, default="layout_utils/layouts/batch",
+        help="Directory containing layout JSONs for batch mode"
+    )
+    parser.add_argument(
+        "--batch-output", type=str, default="output/batch",
+        help="Output directory for batch results"
+    )
+    return parser.parse_args()
 
 def main():
-    layout_path = "layouts/test_layout.json"
-    log_path = "output/simulation_log.json"
+    args = parse_args()
 
-    # Load layout from JSON file
-    layout = load_layout(layout_path)
+    config = {
+        "some_parameter": 1.0,  # You can expand this config as needed
+    }
 
-    # Initialize CoreGrid with loaded layout dimensions
-    grid = CoreGrid(width=layout["width"], height=layout["height"])
-    grid.initialize_from_layout(layout)
+    if args.batch:
+        print("🚀 Running in batch mode...")
+        evaluate_layouts_in_batch(args.batch_dir, args.batch_output, config)
 
-    # Set up recorder and simulator
-    sim = Simulator(grid=grid, max_timesteps=MAX_TIMESTEPS, config={
-        "weights": {
-            "total_energy": 3.0,
-            "life_uniformity": 1.5,
-            "thermal_stability": 1.0,
-            "penalties": 5.0
-        },
-        "reference_max_energy": 2500.0,
-        "return_breakdown": True
-    })
-    sim.run()
+    else:
+        print(f"🚀 Running single simulation for layout: {args.layout}")
+        layout = load_layout(args.layout)
+        grid = CoreGrid(width=layout["width"], height=layout["height"])
+        grid.initialize_from_layout(layout)
 
-    print("⏳ Running simulation...")
+        sim = Simulator(
+            grid=grid,
+            max_timesteps=args.timesteps,
+            output_path=args.output,
+            config=config
+        )
+        sim.run()
 
-    # Export simulation log
-   # recorder.save(log_path)
-    print("✅ Simulation complete.")
+        final_fitness = sim.meta_history[-1]["fitness"]
+        print(f"\n✅ Simulation complete. Final fitness: {final_fitness:.4f}")
+        print(f"📁 Results saved to: {args.output}")
 
-    # Evaluate penalties on final grid state
-    penalty_calc = PenaltyCalculator()
-    penalties = penalty_calc.evaluate(grid)
-
-    print("🔎 Final penalty breakdown:")
-    print(f"  🔥 Temperature Penalty: {penalties['temp']:.4f}")
-    print(f"  🌡️ Hotspot Penalty:     {penalties['hotspot']:.4f}")
-    print(f"  🪞 Symmetry Score:      {penalties['symmetry']:.4f}")
-    print(f"  ⚖️ Weights:              {penalties['weights']}")
 if __name__ == "__main__":
     main()

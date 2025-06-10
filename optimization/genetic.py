@@ -3,7 +3,7 @@ import copy
 import json
 from optimization.fitness import run_simulation_and_score
 from core_sim.core_grid import CoreGrid
-import core_sim.fuel_assembly
+import core_sim.empty
 import os
 
 class Layout:

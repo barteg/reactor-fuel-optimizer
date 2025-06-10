@@ -1,0 +1,15 @@
+# core_sim/constants.py
+TIMESTEPS = 1000
+INITIAL_FUEL_ENERGY_OUTPUT = 10.0
+MAX_TEMPERATURE = 1800.0
+T_OPT = 1000.0
+SIGMA_T = 200.0
+GAMMA = 1.5
+ENERGY_CONSTANT = 12000.0
+THERMAL_CAPACITY = 5000.0
+COOLING_COEFF = 40.0
+BURN_RATE_BASE = 0.0004
+T_MIN = 300.0
+T_MAX = 1800.0
+BASE_ALPHA = 1e-5  # Adjust as needed for realistic ΔT per step
+AGE_DECAY_COEFF = 0.0005  # Heating efficiency decay with age

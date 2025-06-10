@@ -1,9 +1,12 @@
 # core_sim/core_grid.py
 
 import json
-import random
-from core_sim.fuel_assembly import FuelAssembly, Fuel, ControlRod, Moderator, Blank
-
+from wx.lib.pydocview import Blank
+from core_sim.base_assembly import FuelAssembly
+from core_sim.fuel import Fuel
+from core_sim.empty import Blank
+from core_sim.moderator import Moderator
+from core_sim.control_rod import ControlRod
 
 class CoreGrid:
     def __init__(self, width=30, height=30):
@@ -31,10 +34,31 @@ class CoreGrid:
         return None
 
     def get_neighbors(self, x, y):
-        """Return a list of valid neighboring FuelAssemblies (up, down, left, right)."""
-        offsets = [(-1, 0), (1, 0), (0, -1), (0, 1)]
-        neighbors = [self.get_fa(x + dx, y + dy) for dx, dy in offsets]
-        return [n for n in neighbors if n is not None]
+        offsets_with_weights = [
+            (-1, 0, 1.0),  # left
+            (1, 0, 1.0),  # right
+            (0, -1, 1.0),  # up
+            (0, 1, 1.0),  # down
+            (-1, -1, 0.4),  # top-left diagonal
+            (-1, 1, 0.4),  # bottom-left diagonal
+            (1, -1, 0.4),  # top-right diagonal
+            (1, 1, 0.4),  # bottom-right diagonal
+        ]
+        neighbors = []
+        for dx, dy, weight in offsets_with_weights:
+            fa = self.get_fa(x + dx, y + dy)
+            if fa is not None:
+                neighbors.append((fa, weight))
+        return neighbors
+
+        # diagonal offsets with weight 0.4
+        offsets_04 = [(-1, -1), (-1, 1), (1, -1), (1, 1)]
+        for dx, dy in offsets_04:
+            neighbor = self.get_fa(x + dx, y + dy)
+            if neighbor is not None:
+                neighbors.append((neighbor, 0.4))
+
+        return neighbors
 
     def load_special_layout(self, filepath: str):
         """

@@ -1,0 +1,1503 @@
+{
+  "width": 20,
+  "height": 20,
+  "grid": [
+    [
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "control_rod"
+      }
+    ],
+    [
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      }
+    ],
+    [
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      }
+    ],
+    [
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      }
+    ],
+    [
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      }
+    ],
+    [
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      }
+    ],
+    [
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      }
+    ],
+    [
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      }
+    ],
+    [
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "control_rod"
+      }
+    ],
+    [
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      }
+    ],
+    [
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "moderator"
+      }
+    ],
+    [
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "control_rod"
+      }
+    ],
+    [
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      }
+    ],
+    [
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "moderator"
+      }
+    ],
+    [
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      }
+    ],
+    [
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      }
+    ],
+    [
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 3.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      }
+    ],
+    [
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "blank"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "control_rod"
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 1.0
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      },
+      {
+        "fa_type": "moderator"
+      },
+      {
+        "fa_type": "fuel",
+        "enrichment": 2.0
+      }
+    ]
+  ]
+}

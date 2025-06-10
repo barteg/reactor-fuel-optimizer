@@ -1,13 +1,14 @@
 import numpy as np
 import os
+import json
 from tqdm import tqdm
 from core_sim.flux_models import diffusion_approx_flux
-import json
 from core_sim.core_grid import CoreGrid
 from core_sim.penalties import PenaltyCalculator
-from core_sim.fuel_assembly import FuelAssembly
+from core_sim.base_assembly import FuelAssembly  # adjust if split further
 from optimization.fitness import compute_fitness
 from core_sim.recorder import Recorder
+from core_sim import constants  # Assuming you added constants.py
 
 class Simulator:
     def __init__(self, grid: CoreGrid, max_timesteps, output_path="output/simulation_log.json", config=None):
@@ -20,24 +21,26 @@ class Simulator:
 
         self.recorder = Recorder((self.grid.height, self.grid.width), self.T)
 
+        # Set types grid for recorder
         types_grid = [[fa.type if fa else "none" for fa in row] for row in self.grid.grid]
         self.recorder.set_types(types_grid)
 
+        # Logs for simulation variables over time
         self.temperature_log = []
         self.energy_output_log = []
         self.life_log = []
         self.total_energy_log = []
+        self.flux_log = []
 
         self.grid_history = []
         self.meta_history = []
 
-        self.flux_log = []  # Keep to save flux history
-
+        # Initialize energy_output for fuel assemblies
         for y in range(self.grid.height):
             for x in range(self.grid.width):
                 fa = self.grid.get_fa(x, y)
                 if fa and fa.type == "fuel":
-                    fa.energy_output = 10.0  # Kickstart
+                    fa.energy_output = constants.INITIAL_FUEL_ENERGY_OUTPUT  # from constants.py
 
     def step(self):
         flux_map = diffusion_approx_flux(self.grid)
@@ -54,12 +57,11 @@ class Simulator:
                 fa.update(neighbors=neighbors, flux=flux_map[y][x])
                 total_energy += fa.energy_output
 
+        # Create numpy arrays for logs
         temp_grid = np.array([[fa.temperature if fa else 0.0 for fa in row] for row in self.grid.grid])
         energy_grid = np.array([[fa.energy_output if fa else 0.0 for fa in row] for row in self.grid.grid])
         life_grid = np.array([[fa.life if fa else 0.0 for fa in row] for row in self.grid.grid])
         total_energy_grid = np.full_like(temp_grid, total_energy)
-
-        life_grid = np.array([[fa.life if fa else 0.0 for fa in row] for row in self.grid.grid])
 
         self.recorder.record(
             temperature=temp_grid,
@@ -103,15 +105,6 @@ class Simulator:
 
         self.meta_history[-1]["fitness"] = fitness
 
-        # *** Recorder integration ***
-        self.recorder.record(
-            temperature=temp_grid,
-            energy_output=energy_grid,
-            life=life_grid,
-            total_energy=total_energy,
-            flux=flux_map,
-        )
-
         self.current_step += 1
 
     def run(self):
@@ -126,7 +119,6 @@ class Simulator:
     def save(self):
         os.makedirs(os.path.dirname(self.output_path), exist_ok=True)
 
-        # Prepare data dictionary, convert arrays to lists
         data_to_save = {
             "temperature": [arr.tolist() for arr in self.temperature_log],
             "energy_output": [arr.tolist() for arr in self.energy_output_log],
@@ -139,9 +131,8 @@ class Simulator:
         with open(json_path, "w") as f:
             json.dump(data_to_save, f, indent=2)
 
-        # Save detailed snapshots from recorder (assumed to already save JSON)
         recorder_path = self.output_path.replace(".npz", "_snapshots.json")
-        self.recorder.save(self.output_path)
+        self.recorder.save(recorder_path)
 
         print(f"\n[✔] Simulation saved to {json_path}")
         print(f"[✔] Detailed snapshots saved to {recorder_path}")
