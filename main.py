@@ -61,9 +61,25 @@ def main():
         )
         sim.run()
 
-        final_fitness = sim.meta_history[-1]["fitness"]
-        print(f"\n✅ Simulation complete. Final fitness: {final_fitness:.4f}")
-        print(f"📁 Results saved to: {args.output}")
+        # Load final meta snapshot from saved log
+        with open(args.output, "r") as f:
+            data = json.load(f)
+
+        if "meta" not in data or not isinstance(data["meta"], list) or not data["meta"]:
+            print("⚠️  Warning: No valid 'meta' list found in the output log.")
+        else:
+            final_meta = data["meta"][-1]
+            penalties = final_meta.get("penalties", {})
+
+            print(f"\n✅ Simulation complete.")
+            print(f"📈 Final fitness:        {final_meta.get('fitness', 'N/A'):.4f}")
+            print(f"⚡ Total energy output:  {final_meta.get('total_energy', 'N/A'):.4f}")
+            print(f"⚠️  Total penalty:        {penalties.get('total', 'N/A'):.4e}")
+            print(f"🔥 Hotspot penalty:      {penalties.get('hotspot', 'N/A'):.4f}")
+            print(f"🌡️  Temp penalty:         {penalties.get('temp', 'N/A'):.4f}")
+            print(f"🌀 Symmetry penalty:     {penalties.get('symmetry', 'N/A'):.4f}")
+            print(f"⚖️  Penalty weights:      {penalties.get('weights', 'N/A')}")
+            print(f"\n📁 Results saved to:     {args.output}")
 
 if __name__ == "__main__":
     main()

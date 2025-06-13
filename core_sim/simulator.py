@@ -5,7 +5,7 @@ from tqdm import tqdm
 from core_sim.flux_models import diffusion_approx_flux
 from core_sim.core_grid import CoreGrid
 from core_sim.penalties import PenaltyCalculator
-from core_sim.base_assembly import FuelAssembly  # adjust if split further
+from core_sim.assemblies.base_assembly import FuelAssembly  # adjust if split further
 from optimization.fitness import compute_fitness
 from core_sim.recorder import Recorder
 from core_sim import constants  # Assuming you added constants.py
@@ -63,14 +63,6 @@ class Simulator:
         life_grid = np.array([[fa.life if fa else 0.0 for fa in row] for row in self.grid.grid])
         total_energy_grid = np.full_like(temp_grid, total_energy)
 
-        self.recorder.record(
-            temperature=temp_grid,
-            energy_output=energy_grid,
-            life=life_grid,
-            total_energy=total_energy,
-            flux=flux_map,
-        )
-
         self.temperature_log.append(temp_grid)
         self.energy_output_log.append(energy_grid)
         self.life_log.append(life_grid)
@@ -91,6 +83,15 @@ class Simulator:
             "total_energy": total_energy
         }
         self.meta_history.append(meta_entry)
+
+        self.recorder.record(
+            temperature=temp_grid,
+            energy_output=energy_grid,
+            life=life_grid,
+            total_energy=total_energy,
+            flux=flux_map,
+            meta=meta_entry,
+        )
 
         fitness = compute_fitness(self.meta_history, self.grid_history, config={
             "weights": {

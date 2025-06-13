@@ -2,11 +2,11 @@
 
 import json
 from wx.lib.pydocview import Blank
-from core_sim.base_assembly import FuelAssembly
-from core_sim.fuel import Fuel
-from core_sim.empty import Blank
-from core_sim.moderator import Moderator
-from core_sim.control_rod import ControlRod
+from core_sim.assemblies.base_assembly import FuelAssembly
+from core_sim.assemblies.fuel import Fuel
+from core_sim.assemblies.empty import Blank
+from core_sim.assemblies.moderator import Moderator
+from core_sim.assemblies.control_rod import ControlRod
 
 class CoreGrid:
     def __init__(self, width=30, height=30):

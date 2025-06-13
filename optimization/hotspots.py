@@ -1,4 +1,4 @@
-from core_sim.empty import FuelAssembly
+from core_sim.assemblies.empty import FuelAssembly
 def compute_hotspots(grid, life_threshold=0.15):
     penalty = 0
     for y in range(grid.height):

@@ -1,7 +1,7 @@
 import math
 import numpy as np
 from .base_assembly import FuelAssembly
-from .constants import *
+from core_sim.constants import *
 
 class Fuel(FuelAssembly):
 
@@ -19,9 +19,9 @@ class Fuel(FuelAssembly):
         temp_change = 0.0
         for neighbor, weight in neighbors:
             if isinstance(neighbor, Moderator):
-                temp_change += neighbor.thermal_power * 5.0 * weight
+                temp_change += neighbor.thermal_power * weight
             elif isinstance(neighbor, ControlRod):
-                temp_change -= neighbor.thermal_power * 5.0 * weight
+                temp_change -= neighbor.thermal_power * weight
 
         self.temperature += temp_change
 
@@ -37,10 +37,10 @@ class Fuel(FuelAssembly):
         local_flux = core_flux * flux_modifier * soft_flux_decay
         flux_factor = min(local_flux / core_flux, 1.0)
 
-        enrichment_term = GAMMA * self.enrichment / (1 + GAMMA * self.enrichment)
+        #enrichment_term = GAMMA * self.enrichment / (1 + GAMMA * self.enrichment)
         temp_factor = math.exp(-0.5 * ((self.temperature - T_OPT) / SIGMA_T) ** 2)
 
-        self.energy_output = flux_factor * self.life * enrichment_term * temp_factor * ENERGY_CONSTANT
+        self.energy_output = flux_factor * self.life * temp_factor * ENERGY_CONSTANT
 
         heating = self.energy_output
         cooling = COOLING_COEFF * (self.temperature - avg_temp)
