@@ -71,7 +71,7 @@ Export your layout to a JSON file and run it in the simulator.
 
 
 
-**Demo**: [layout_editor_demo.mp4](assets/layout_editor_preview.gif)
+**Demo**: [layout_editor_demo.gif](assets/layout_editor_preview.gif)
 **Output file** : layout.json
 
 
