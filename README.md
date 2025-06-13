@@ -55,9 +55,30 @@ A modular 2D reactor core simulator and optimizer designed to evolve fuel assemb
   ```bash
   python main.py
 ```
+## Layout Editor
+
+Use the visual layout editor (layout_editor.py) to design your own reactor core layouts. You can place any combination of:
+
+F — Fuel
+
+C — Control Rod
+
+M — Moderator
+
+B — Blank
+
+Export your layout to a JSON file and run it in the simulator.
+
+
+
+📹 Demo: [(https://github.com/user-attachments/assets/2cab37f4-4c68-4a61-9766-f2c1da50ea6e)]
+💾 Output file: layout.json
+
+
 Configuration & Extension
 Config file
 Edit simulation parameters in utils/config.py (e.g., TIMESTEPS).
+
 
 Custom physics & penalties
 
