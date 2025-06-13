@@ -67,15 +67,12 @@ M — Moderator
 
 B — Blank
 
-Export your layout to a JSON file and run it in the simulator.
+Export your layout to a JSON file and run it in the simulator.\
+**Demo**: 
 
+![layout_editor_demo.gif](assets/layout_editor_preview.gif)
 
-
-**Demo**: [layout_editor_demo.gif](assets/layout_editor_preview.gif)
-**Output file** : layout.json
-
-
-Configuration & Extension
+## Configuration & Extension
 Config file
 Edit simulation parameters in utils/config.py (e.g., TIMESTEPS).
 
