@@ -62,9 +62,10 @@ class Fuel(FuelAssembly):
         self.energy_output = flux_factor * self.life * temp_factor * ENERGY_CONSTANT
 
         # 7. Update temperature from heating/cooling
-        heating = self.energy_output
-        cooling = COOLING_COEFF * (self.temperature - avg_temp)
-        delta_T = (heating - cooling) / THERMAL_CAPACITY
+        heating = self.energy_output * self.life  # spent fuel heats less
+        cooling = COOLING_COEFF * (1 + (1 - self.life) * 2.0) \
+                  * (self.temperature - avg_temp)  # spent fuel cools faster
+        delta_T = (heating - cooling) / (THERMAL_CAPACITY * (self.life + 0.1))
         self.temperature = max(T_MIN, min(self.temperature + delta_T, T_MAX))
 
         # 8. Life loss using burnup model with correct dt
