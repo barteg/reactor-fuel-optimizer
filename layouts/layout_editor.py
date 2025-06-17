@@ -42,7 +42,6 @@ class GridEditor:
         # %P is the value of the entry if the edit is allowed
         # %s is the current value of the entry
         # %S is the text string being inserted or deleted, if any
-        # %v is the validation type (key, focusin, focusout)
         vcmd_enrichment = (self.root.register(self._validate_enrichment_input), '%P')
         vcmd_life = (self.root.register(self._validate_life_input), '%P')
 
@@ -95,10 +94,8 @@ class GridEditor:
                 self.current_life = round(value, 3)  # Update the actual value
                 return True
             else:
-                # messagebox.showwarning("Input Error", "Life must be between 0.1 and 1.0")
                 return False  # Reject invalid range
         except ValueError:
-            # messagebox.showwarning("Input Error", "Life must be a number.")
             return False  # Reject non-numeric input
 
     def draw_grid(self):
@@ -132,7 +129,6 @@ class GridEditor:
             cell["life"] = self.current_life
 
             # Additional check to prevent placing Fuel if current values are default/invalid from entry
-            # This handles cases where user types invalid input and hasn't fixed it yet
             if not (0.01 <= cell["enrichment"] <= 0.10 and 0.1 <= cell["life"] <= 1.0):
                 messagebox.showwarning("Invalid Fuel Properties",
                                        "Please enter valid Enrichment (0.01-0.10) and Life (0.1-1.0) values for Fuel.")
@@ -200,14 +196,12 @@ class GridEditor:
                                         if c_idx < GRID_SIZE:
                                             self.grid_data[r_idx][c_idx] = cell
                             self.draw_grid()
-
                     else:
                         messagebox.showerror("Load Error", "Invalid JSON format: 'grid' key missing or malformed.")
             except json.JSONDecodeError as e:
                 messagebox.showerror("Load Error", f"Invalid JSON file: {e}")
             except IOError as e:
                 messagebox.showerror("Load Error", f"Could not open file: {e}")
-
 
 if __name__ == "__main__":
     root = tk.Tk()

@@ -1,7 +1,6 @@
 # core_sim/core_grid.py
 
 import json
-from wx.lib.pydocview import Blank
 from core_sim.assemblies.base_assembly import FuelAssembly
 from core_sim.assemblies.fuel import Fuel
 from core_sim.assemblies.empty import Blank

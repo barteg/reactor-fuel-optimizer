@@ -25,10 +25,10 @@ def diffusion_approx_flux(grid: CoreGrid, diffusion_coeff: float = 0.2) -> np.nd
                 flux_map[y, x] = fa.neutron_yield()
 
     # Step 2: Diffusion via discrete Laplacian
-    laplacian_kernel = np.array([
-        [0, 1, 0],
-        [1, -4, 1],
-        [0, 1, 0]
+    laplacian_kernel= np.array([
+        [1 / 6, 2 / 3, 1 / 6],
+        [2 / 3, -10 / 3, 2 / 3],
+        [1 / 6, 2 / 3, 1 / 6]
     ], dtype=np.float64)
 
     # Apply convolution to simulate flux spread

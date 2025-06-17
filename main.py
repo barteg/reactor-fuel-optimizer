@@ -1,7 +1,6 @@
 import argparse
 import os
 import json
-
 from core_sim.core_grid import CoreGrid
 from core_sim.simulator import Simulator
 from layout_utils.load_layout import load_layout

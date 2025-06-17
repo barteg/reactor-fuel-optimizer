@@ -10,12 +10,11 @@ def load_simulation_json(filepath):
     temperature = np.array(data["temperature"])
     energy_output = np.array(data["energy_output"])
     life = np.array(data["life"])
-    flux = np.array(data["flux"])  # ← NEW
+    flux = np.array(data["flux"])
     total_energy = data["total_energy"]
-    types = np.array(data["types"])  # shape: (height, width)
+    types = np.array(data["types"])
 
     return temperature, energy_output, life, flux, total_energy, types
-
 
 def animate_full_grid_json(filepath):
     temperature, energy_output, life, flux, total_energy, types = load_simulation_json(filepath)

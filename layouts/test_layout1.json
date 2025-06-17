@@ -4,54 +4,54 @@
   "grid": [
     [
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       }
     ],
     [
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
         "fa_type": "Fuel",
@@ -119,50 +119,17 @@
         "life": 1.0
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       }
     ],
     [
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
         "fa_type": "Fuel",
         "enrichment": 0.05,
         "life": 1.0
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
       },
       {
         "fa_type": "Fuel",
@@ -171,67 +138,56 @@
       },
       {
         "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Blank"
       }
     ],
     [
       {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Moderator"
+        "fa_type": "Blank"
       },
       {
         "fa_type": "Fuel",
@@ -240,11 +196,77 @@
       },
       {
         "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Blank"
       }
     ],
     [
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
       },
       {
         "fa_type": "Fuel",
@@ -260,25 +282,19 @@
         "life": 1.0
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
       },
       {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "ControlRod"
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
       },
       {
         "fa_type": "Fuel",
@@ -294,20 +310,22 @@
         "life": 1.0
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Blank"
       }
     ],
     [
       {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Moderator"
+        "fa_type": "Blank"
       },
       {
         "fa_type": "Fuel",
@@ -338,6 +356,24 @@
         "life": 1.0
       },
       {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
         "fa_type": "Fuel",
         "enrichment": 0.05,
         "life": 1.0
@@ -351,20 +387,32 @@
         "life": 1.0
       },
       {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       }
     ],
     [
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
       },
       {
         "fa_type": "Fuel",
@@ -380,42 +428,6 @@
         "life": 1.0
       },
       {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
         "fa_type": "Moderator"
       },
       {
@@ -424,20 +436,32 @@
         "life": 1.0
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Blank"
       }
     ],
     [
       {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Moderator"
+        "fa_type": "Blank"
       },
       {
         "fa_type": "Fuel",
@@ -458,7 +482,23 @@
         "life": 1.0
       },
       {
-        "fa_type": "Moderator"
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
       },
       {
         "fa_type": "Fuel",
@@ -479,20 +519,32 @@
         "life": 1.0
       },
       {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       }
     ],
     [
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
       },
       {
         "fa_type": "Fuel",
@@ -508,42 +560,6 @@
         "life": 1.0
       },
       {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
         "fa_type": "Moderator"
       },
       {
@@ -552,20 +568,32 @@
         "life": 1.0
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Blank"
       }
     ],
     [
       {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Moderator"
+        "fa_type": "Blank"
       },
       {
         "fa_type": "Fuel",
@@ -596,6 +624,24 @@
         "life": 1.0
       },
       {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
         "fa_type": "Fuel",
         "enrichment": 0.05,
         "life": 1.0
@@ -609,20 +655,22 @@
         "life": 1.0
       },
       {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       }
     ],
     [
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
       },
       {
         "fa_type": "Fuel",
@@ -638,25 +686,19 @@
         "life": 1.0
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
       },
       {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "ControlRod"
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
       },
       {
         "fa_type": "Fuel",
@@ -672,68 +714,22 @@
         "life": 1.0
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Blank"
       }
     ],
     [
       {
-        "fa_type": "ControlRod"
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Fuel",
-        "enrichment": 0.05,
-        "life": 1.0
-      },
-      {
-        "fa_type": "Moderator"
+        "fa_type": "Blank"
       },
       {
         "fa_type": "Fuel",
@@ -742,49 +738,72 @@
       },
       {
         "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Blank"
       }
     ],
     [
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
         "fa_type": "Fuel",
         "enrichment": 0.05,
         "life": 1.0
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
-      },
-      {
-        "fa_type": "Moderator"
       },
       {
         "fa_type": "Fuel",
@@ -793,11 +812,56 @@
       },
       {
         "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Blank"
       }
     ],
     [
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
         "fa_type": "Fuel",
@@ -865,54 +929,54 @@
         "life": 1.0
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       }
     ],
     [
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       },
       {
-        "fa_type": "ControlRod"
+        "fa_type": "Blank"
       }
     ]
   ]
