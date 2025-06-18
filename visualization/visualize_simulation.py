@@ -115,4 +115,4 @@ def animate_full_grid_json(filepath):
 
 
 if __name__ == "__main__":
-    animate_full_grid_json("../output/single_run_log.json")
+    animate_full_grid_json("../output/ga_optimized_20250617_235244.json")
