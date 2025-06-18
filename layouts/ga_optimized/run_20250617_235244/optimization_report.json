@@ -1,0 +1,23 @@
+{
+  "timestamp": "2025-06-18 00:37:15",
+  "configuration": {
+    "population_size": 40,
+    "generations": 80,
+    "mutation_rate": 0.025,
+    "crossover_rate": 0.8,
+    "elitism_count": 5,
+    "tournament_size": 4,
+    "timesteps": 100,
+    "temp_limit": 700,
+    "optimal_fuel_ratio": 0.6,
+    "critical_temp": 900
+  },
+  "movable_positions": 206,
+  "best_fitness": 24843719.62140813,
+  "fuel_count": 156,
+  "fuel_ratio": 0.7572815533980582,
+  "generations_run": 80,
+  "final_best_fitness": 24843719.62140813,
+  "final_avg_fitness": 24511047.290966194,
+  "improvement": 1169188.0918807425
+}

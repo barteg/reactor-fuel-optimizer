@@ -1,0 +1,735 @@
+{
+  "width": 15,
+  "height": 15,
+  "grid": [
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "ControlRod"
+      },
+      {
+        "fa_type": "Moderator"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Fuel",
+        "enrichment": 0.05,
+        "life": 1.0
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ],
+    [
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      },
+      {
+        "fa_type": "Blank"
+      }
+    ]
+  ]
+}
