@@ -333,5 +333,5 @@ Modify `optimization_ga/fitness_evaluator.py` to change optimization objectives.
 
 ---
 
-**Contributors:** Thomas Karpinski and team  
+**Contributors:** Bartosz Janikula and Tomasz Karpiński  
 **License:** MIT
